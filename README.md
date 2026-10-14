@@ -9,7 +9,7 @@ Place consoles, speakers, racks, backline, musicians and lights to real scale, d
 *Made by **PaulMX**, a live and studio sound engineer · built with the help of AI (code and 3D models).*
 *(Version française : voir [LISEZMOI.txt](LISEZMOI.txt) et la section [Français](#français) en bas de page.)*
 
-![Stage3D 3D view](itch-kit/screenshot-1-3d.png)
+![Stage3D screenshot 1](screenshots/screenshot-1.png)
 
 ---
 
@@ -17,9 +17,10 @@ Place consoles, speakers, racks, backline, musicians and lights to real scale, d
 
 | | |
 |---|---|
-| ![Lights on stands with beams](itch-kit/screenshot-20-lumieres-sur-pied-faisceaux.png) | ![Grand piano, parquet, mics and light](itch-kit/screenshot-16-piano-parquet-micros-lumiere.png) |
-| ![Stage changeover mode](itch-kit/screenshot-22-changement-de-plateau.png) | ![Numbered monitors and floor mats](itch-kit/screenshot-17-retours-numerotes-tapis-sol.png) |
-| ![Layers and no-backline button](itch-kit/screenshot-18-calques-sans-backline.png) | ![DMX lighting patch](itch-kit/screenshot-23-patch-lumiere.png) |
+| ![Stage3D screenshot 2](screenshots/screenshot-2.png) | ![Stage3D screenshot 3](screenshots/screenshot-3.png) |
+| ![Stage3D screenshot 4](screenshots/screenshot-4.png) | ![Stage3D screenshot 5](screenshots/screenshot-5.png) |
+| ![Stage3D screenshot 6](screenshots/screenshot-6.png) | ![Stage3D screenshot 7](screenshots/screenshot-7.png) |
+| ![Stage3D screenshot 8](screenshots/screenshot-8.png) | ![Stage3D screenshot 9](screenshots/screenshot-9.png) |
 
 ---
 
