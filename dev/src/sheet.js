@@ -66,15 +66,24 @@ function stageObjects() {
   const near = vis.filter(o => o.x > x0 - 1.2 && o.x < x1 + 1.2 && o.z > z0 - 1.2 && o.z < z1 + 1.2);
   return near.length ? near : prat;
 }
+// plan de la page 1 : exactement l'emprise des praticables (la scène seule, sans vide autour)
+function stageRect() {
+  const prat = st.S.objects.filter(o => st.isVisible(o) && def(o.type).praticable);
+  if (!prat.length) return null;
+  const r = { minX: Infinity, maxX: -Infinity, minZ: Infinity, maxZ: -Infinity, maxY: 3 };
+  prat.forEach(o => { const e = st.extents(o); r.minX = Math.min(r.minX, o.x - e.hx); r.maxX = Math.max(r.maxX, o.x + e.hx); r.minZ = Math.min(r.minZ, o.z - e.hz); r.maxZ = Math.max(r.maxZ, o.z + e.hz); });
+  return r;
+}
 
 function build(sheet) {
   const S = st.S;
   const objs = stageObjects();
   const bounds = view.contentBounds(objs || undefined);
   const PW = 2000;
-  const bw = bounds.maxX - bounds.minX + 0.7, bd = bounds.maxZ - bounds.minZ + 0.7;
+  const pb = stageRect() || bounds;
+  const bw = pb.maxX - pb.minX + 0.3, bd = pb.maxZ - pb.minZ + 0.3;
   const PH = Math.round(Math.min(Math.max(PW * bd / bw, PW * 0.45), PW * 1.4));
-  const planCap = view.capture('plan', PW, PH, { labels: false, bounds, margin: 0.7 });
+  const planCap = view.capture('plan', PW, PH, { labels: false, bounds: pb, margin: 0.3 });
   const d3 = view.capture('3d', 1500, 1800, { labels: false, bounds, zoom: 1.2 }).canvas;
   const WMAX = 190;
   const denom = planCap.scale.imageWidthM / (WMAX / 1000);
