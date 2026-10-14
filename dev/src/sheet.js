@@ -63,7 +63,7 @@ function stageObjects() {
   if (!prat.length) return vis.length ? vis : null;
   let x0 = Infinity, x1 = -Infinity, z0 = Infinity, z1 = -Infinity;
   prat.forEach(o => { const e = st.extents(o); x0 = Math.min(x0, o.x - e.hx); x1 = Math.max(x1, o.x + e.hx); z0 = Math.min(z0, o.z - e.hz); z1 = Math.max(z1, o.z + e.hz); });
-  const near = vis.filter(o => o.x > x0 - 4.5 && o.x < x1 + 4.5 && o.z > z0 - 4.5 && o.z < z1 + 2.5);
+  const near = vis.filter(o => o.x > x0 - 1.2 && o.x < x1 + 1.2 && o.z > z0 - 1.2 && o.z < z1 + 1.2);
   return near.length ? near : prat;
 }
 
@@ -72,13 +72,13 @@ function build(sheet) {
   const objs = stageObjects();
   const bounds = view.contentBounds(objs || undefined);
   const PW = 2000;
-  const bw = bounds.maxX - bounds.minX + 1.6, bd = bounds.maxZ - bounds.minZ + 1.6;
-  const PH = Math.round(Math.min(Math.max(PW * bd / bw, PW * 0.45), PW * 1.25));
-  const planCap = view.capture('plan', PW, PH, { labels: false, bounds, margin: 1.6 });
+  const bw = bounds.maxX - bounds.minX + 0.7, bd = bounds.maxZ - bounds.minZ + 0.7;
+  const PH = Math.round(Math.min(Math.max(PW * bd / bw, PW * 0.45), PW * 1.4));
+  const planCap = view.capture('plan', PW, PH, { labels: false, bounds, margin: 0.7 });
   const d3 = view.capture('3d', 1500, 1800, { labels: false, bounds, zoom: 1.2 }).canvas;
   const WMAX = 190;
   const denom = planCap.scale.imageWidthM / (WMAX / 1000);
-  const nice = NICE.find(n => n >= denom) || Math.ceil(denom / 500) * 500;
+  const nice = Math.ceil(denom);
   const widthMm = Math.min(WMAX, (planCap.scale.imageWidthM / nice) * 1000);
   const head = (title) => h('header', { class: 'ph' },
     h('div', {}, h('h1', {}, S.meta.name || tr('Plan de scène')), h('p', {}, metaLine() || title)),
