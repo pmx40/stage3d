@@ -326,7 +326,7 @@ body[data-theme="dark"] .floor.on{outline-color:#ffb02e}
 .ph p{margin:2px 0 0;color:#555;font-size:12px}
 .phr{text-align:right;font-size:11px;color:#555}
 .phr b{display:block;font-size:15px;letter-spacing:.14em;color:#0a7fc4}
-.planwrap{display:flex;justify-content:center;align-items:center;height:215mm}
+.planwrap{display:flex;justify-content:center}
 .planimg{display:block;border:1px solid #0a7fc4;height:auto}
 .pf{display:flex;gap:18px;flex-wrap:wrap;font-size:11px;color:#444;margin-top:3mm}
 .pf .lg i{display:inline-block;width:14px;height:5px;margin-right:5px;vertical-align:middle;border-radius:2px}
