@@ -13,6 +13,16 @@ Place consoles, speakers, racks, backline, musicians and lights to real scale, d
 
 ---
 
+## Screenshots
+
+| | |
+|---|---|
+| ![Lights on stands with beams](itch-kit/screenshot-20-lumieres-sur-pied-faisceaux.png) | ![Grand piano, parquet, mics and light](itch-kit/screenshot-16-piano-parquet-micros-lumiere.png) |
+| ![Stage changeover mode](itch-kit/screenshot-22-changement-de-plateau.png) | ![Numbered monitors and floor mats](itch-kit/screenshot-17-retours-numerotes-tapis-sol.png) |
+| ![Layers and no-backline button](itch-kit/screenshot-18-calques-sans-backline.png) | ![DMX lighting patch](itch-kit/screenshot-23-patch-lumiere.png) |
+
+---
+
 ## Why Stage3D?
 
 Before a show you need to know what fits on the stage, where the cables go, how long they must be, which delay to set on the towers and what has to be carried in or out between two bands. Stage3D lets you answer all of this on a computer, with recognisable equipment modelled in metres, **before** you get on site.
@@ -32,8 +42,6 @@ Before a show you need to know what fits on the stage, where the cables go, how 
 - View buttons: eye level, view from the control position, view from the stage, overview, reset view (key `0`).
 - Two looks: Dark (default) and Aero (Y2K / Frutiger Aero).
 
-![2D plan and calculations](itch-kit/screenshot-2-plan-calculs.png)
-
 ### Equipment library (about 125 objects)
 | Category | Examples |
 |---|---|
@@ -47,52 +55,25 @@ Before a show you need to know what fits on the stage, where the cables go, how 
 
 The models respect the dimensions and general layout of the real equipment (no brand logos).
 
-| | |
-|---|---|
-| ![Object panel](itch-kit/screenshot-3-objet.png) | ![Equipment list](itch-kit/screenshot-4-liste.png) |
-| ![Musicians and backline](itch-kit/screenshot-12-musiciens-backline.png) | ![Mics and pedalboard](itch-kit/screenshot-14-micros-pedalboard.png) |
-| ![Grand piano, parquet, mics and light](itch-kit/screenshot-16-piano-parquet-micros-lumiere.png) | ![DJ set](itch-kit/screenshot-10-dj-set.png) |
-
 ### Lighting
 - **Lights on stands or on the floor:** PAR, PC, LED PC, profile spots and moving heads can be hung, put on a telescopic stand or placed on the floor. Pick the mounting while placing (Auto hangs the light if a truss is nearby, otherwise it goes on the floor).
 - **Realistic beams:** gradient cone, soft floor spot with a hot centre (sharp for a profile, soft for a PC) and a glow at the source.
 - Tilt, aim at a point, adjustable angle and intensity per light; intensity and size sliders for all beams at once; **filter beams by light type**.
 - **DMX lighting patch:** universe, address and mode for every light, automatic addressing that never splits a light between two universes, a gauge per universe, address conflicts highlighted in red, CSV export.
 
-| | |
-|---|---|
-| ![Lights on stands with beams](itch-kit/screenshot-20-lumieres-sur-pied-faisceaux.png) | ![Stage lights and beams](itch-kit/screenshot-13-projecteurs-faisceaux.png) |
-| ![Beam filter](itch-kit/screenshot-19-filtre-faisceaux.png) | ![DMX lighting patch](itch-kit/screenshot-23-patch-lumiere.png) |
-
 ### Audio patch and monitors
 - Clean input list: channel, source, mic / DI, stand and a 48 V box. Press Enter to jump to the next channel, drag a number to reorder, full-screen editor for notes.
 - **Numbered stage monitors:** a numbered badge on each wedge or side-fill, automatic numbering and a table on the PDF sheet.
 
-| | |
-|---|---|
-| ![Audio patch](itch-kit/screenshot-21-patch-son.png) | ![Numbered monitors](itch-kit/screenshot-17-retours-numerotes-tapis-sol.png) |
-
 ### Layers and stage changeover
 - **Layers:** every object belongs to a group (stage, sound, backline, mics, musicians, lighting, furniture, annotations) or to layers you create. Show or hide a whole group in one click, isolate it or lock it. A **No backline** button removes musicians and backline instantly.
 - **Changeover mode:** chain two line-ups on the same stage. What stays stays in place, what leaves is greyed out with a **TAKE OUT** tag, what arrives is tagged **BRING IN**. You get take-out / bring-in / stays lists, a CSV export and a dedicated PDF page.
-
-| | |
-|---|---|
-| ![Layers, no backline](itch-kit/screenshot-18-calques-sans-backline.png) | ![Changeover mode](itch-kit/screenshot-22-changement-de-plateau.png) |
 
 ### Calculations, cables and exports
 - **Cables and measures:** length needed (margin and slack included) and standard length to order.
 - **Sound calculations:** arrival times, alignment delays, delay tower settings (Haas effect), speaker coverage.
 - **Exports:** equipment and cable list (CSV), audio and lighting patch (CSV), **PDF tech sheet** (scale plan, 3D view, equipment, cables, delays, audio and lighting patch, changeover).
 - **Ready-made templates:** 5-piece band concert, conference, DJ set, 6×4 stage.
-
-| | |
-|---|---|
-| ![PDF tech sheet](itch-kit/screenshot-5-fiche.png) | ![Control tent with CL3](itch-kit/screenshot-6-regie-tente-cl3.png) |
-| ![Front fills and coverage](itch-kit/screenshot-7-front-fills-couverture.png) | ![Stacking cases and tables](itch-kit/screenshot-8-empilement-cases-tables.png) |
-| ![Conference template](itch-kit/screenshot-9-conference.png) | ![Aero style](itch-kit/screenshot-11-style-aero.png) |
-
-![Interface in German](itch-kit/screenshot-15-interface-deutsch.png)
 
 ## Run it
 
