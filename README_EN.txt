@@ -80,7 +80,7 @@ QUICK START
     Delay towers: delay = distance main -> delay / speed of sound + Haas.
   - List: equipment and cables counted automatically (CSV export). Patch: input list (CSV export).
   - PDF sheet: scale plan (1:xx), 3D view, equipment, cables, delays, patch. In the print window choose "Save as PDF",
-    A4 landscape, scale 100 %.
+    A4 portrait, scale 100 %.
   - The plan is saved automatically in the browser. "Save" creates a .stage3d.json file (reopen with "Open" or by dropping it on the window).
 
 LIBRARY (about 125 objects)

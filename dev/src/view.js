@@ -1511,17 +1511,18 @@ export function scaleSpec(ppm) {
 }
 
 /* ================= export d'images (réutilise le rendu principal, redimensionné le temps d'une capture) ================= */
-export function capture(kind, W, H) {
+export function capture(kind, W, H, opts = {}) {
   // les exports (fiche, PNG) restent toujours clairs, pour l'impression
   const wasTheme = T.theme, wasLabels = T.labels;
   setTheme('print');
-  if (!wasLabels) { T.labels = true; syncAll(); } // les noms figurent toujours sur les exports
-  const res = captureNow(kind, W, H);
-  if (!wasLabels) { T.labels = false; syncAll(); }
+  const wantLabels = opts.labels !== false; // les noms figurent sur les exports, sauf demande contraire (fiche PDF)
+  if (wantLabels !== wasLabels) { T.labels = wantLabels; syncAll(); }
+  const res = captureNow(kind, W, H, opts);
+  if (wantLabels !== wasLabels) { T.labels = wasLabels; syncAll(); }
   setTheme(wasTheme);
   return res;
 }
-function captureNow(kind, W, H) {
+function captureNow(kind, W, H, opts = {}) {
   const prevSize = renderer.getSize(new THREE.Vector2());
   const prevPR = renderer.getPixelRatio();
   renderer.setPixelRatio(1);
@@ -1533,10 +1534,11 @@ function captureNow(kind, W, H) {
   const footWas = [];
   views.forEach(v => { if (v.foot) { footWas.push([v.foot, v.foot.visible]); v.foot.visible = kind === 'plan'; } });
   scene.background = new THREE.Color(kind === 'plan' ? '#f1f8fd' : '#e3f2fc');
-  const b = contentBounds();
+  const b = opts.bounds || contentBounds();
+  const mg = opts.margin ?? 3;
   let camera, ppm = 1, centerX = 0, centerZ = 0, capDist = 20;
   if (kind === 'plan') {
-    const bw = b.maxX - b.minX + 3, bd = b.maxZ - b.minZ + 3;
+    const bw = b.maxX - b.minX + mg, bd = b.maxZ - b.minZ + mg;
     ppm = Math.min(W / bw, H / bd);
     centerX = (b.minX + b.maxX) / 2; centerZ = (b.minZ + b.maxZ) / 2;
     camera = new THREE.OrthographicCamera(-W / 2 / ppm, W / 2 / ppm, H / 2 / ppm, -H / 2 / ppm, 0.1, 1000);
@@ -1545,7 +1547,7 @@ function captureNow(kind, W, H) {
     camera = new THREE.PerspectiveCamera(42, W / H, 0.1, 600);
     const cx = (b.minX + b.maxX) / 2, cz = (b.minZ + b.maxZ) / 2;
     const R = Math.hypot(b.maxX - b.minX, b.maxZ - b.minZ, b.maxY) / 2 + 1;
-    const dist = (R / Math.sin(THREE.MathUtils.degToRad(21))) * 0.62;
+    const dist = (R / Math.sin(THREE.MathUtils.degToRad(21))) * 0.62 * (opts.zoom ?? 1);
     const cp = Math.cos(0.55);
     camera.position.set(cx + dist * cp * Math.sin(0.5), Math.min(1.5, b.maxY / 2) + dist * Math.sin(0.55), cz + dist * cp * Math.cos(0.5));
     camera.lookAt(cx, Math.min(1.5, b.maxY / 2), cz);

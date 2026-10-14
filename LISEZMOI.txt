@@ -99,7 +99,7 @@ PRISE EN MAIN RAPIDE
     Tours de delay : retard = distance façade -> delay / vitesse du son + Haas.
   - Liste : matériel et câbles comptés automatiquement (export CSV). Patch : liste d'entrées (export CSV).
   - Fiche PDF : plan à l'échelle (1:xx), vue 3D, matériel, câbles, délais, patch. Dans la fenêtre d'impression
-    choisir « Enregistrer au format PDF », A4 paysage, échelle 100 %.
+    choisir « Enregistrer au format PDF », A4 portrait, échelle 100 %.
   - Le plan est sauvegardé automatiquement dans le navigateur. « Enregistrer » crée un fichier .stage3d.json
     (à rouvrir avec « Ouvrir » ou en le glissant dans la fenêtre).
 
