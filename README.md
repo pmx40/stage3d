@@ -3,7 +3,7 @@
 **Free, in-browser 3D stage planner for sound, lighting and event technicians.**
 Place consoles, speakers, racks, backline, musicians and lights to real scale, draw your cables, check your delays, patch audio and DMX, plan a band changeover and export a PDF tech sheet.
 
-👉 **[Use it now: paulmx.itch.io/stage3d](https://paulmx.itch.io/stage3d)** (runs in your browser, no account, no install)
+**[Use it now: paulmx.itch.io/stage3d](https://paulmx.itch.io/stage3d)** (runs in your browser, no account, no install)
 💾 **[Windows .exe and zip: Releases](../../releases)**
 
 *Made by **PaulMX**, a live and studio sound engineer · built with the help of AI (code and 3D models).
