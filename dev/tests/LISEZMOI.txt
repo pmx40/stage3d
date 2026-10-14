@@ -1,0 +1,21 @@
+TESTS DE COMPATIBILITÉ DES PLANS
+================================
+Les plans enregistrés par les utilisateurs (fichiers .stage3d.json et sauvegarde automatique du navigateur) doivent
+TOUJOURS pouvoir s'ouvrir dans les versions suivantes, sans rien perdre.
+
+Format : champ « v » à la racine du plan (STATE_VERSION dans dev/src/store.js).
+  v1 = première version publique
+  v2 = calques (groups, o.group), numéros de retour (o.num), type de sol (room.floor)
+  v4 = intensité individuelle des projecteurs (o.level)
+  v3 = plateaux (plateaux, o.pl), fixation des projecteurs (o.mount), patch lumière DMX (o.dmxU/A/M), famille des voies (patch[].grp)
+Règles :
+  - ajouter un champ = incrémenter STATE_VERSION + une étape dans MIGRATIONS (store.js) ; ne jamais supprimer ni renommer un champ existant ;
+  - les champs inconnus (plan d'une version plus récente) sont conservés tels quels ; le plan s'ouvre quand même et l'utilisateur est prévenu ;
+  - les préférences d'affichage (calques masqués, filtre des faisceaux…) sont à part (localStorage « stage3d.prefs »), pas dans le plan.
+
+Fixtures (fixtures/) : vrais plans produits par les versions publiées (première version, version précédant les calques, versions v2 et v3).
+À chaque nouvelle version du format, ajouter une fixture générée par la version publiée précédente.
+
+Lancer : cd dev/tests ; npm i puppeteer-core (une fois) ; node compat.mjs
+Vérifie : ouverture par « Ouvrir » / glisser-déposer, plan mémorisé par un ancien utilisateur (avec anciennes préférences), aller-retour
+enregistrer / rouvrir, plan d'une version future, plan abîmé, fichiers invalides.

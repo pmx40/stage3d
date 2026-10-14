@@ -1,0 +1,1 @@
+{"name":"stage3d-dev","private":true,"version":"1.0.0","scripts":{"build":"node build.mjs"},"dependencies":{"esbuild":"^0.28.2","three":"^0.170.0"}}

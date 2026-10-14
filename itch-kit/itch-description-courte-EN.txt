@@ -1,0 +1,12 @@
+Stage3D is a free, in-browser tool to plan your stages and events to real scale before you get on site.
+
+Place consoles, speakers, racks, backline, musicians and lights in 2D and 3D, draw your cables, check delays, number your monitors, patch audio and DMX lights, plan a band changeover, and export a PDF tech sheet. Everything is modelled in metres with recognisable equipment (about 125 objects).
+
+Designed by a sound engineer, for sound engineers and technicians. Made by PaulMX, built with the help of AI.
+
+- Free, no account, no server: your plan stays in your browser and can be saved as a file.
+- 5 languages: English, Français, Español, Deutsch, Italiano.
+- A Windows .exe is also available to download.
+- A computer with a mouse is recommended.
+
+See the devlog for the latest updates.

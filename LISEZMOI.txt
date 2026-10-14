@@ -1,0 +1,164 @@
+STAGE3D : plan de scène à l'échelle pour techniciens son / événementiel (navigateur ou exécutable)
+=================================================================================================
+(English version: README_EN.txt)
+
+LANGUES
+  Français, English, Español, Deutsch, Italiano. La langue du navigateur est détectée au premier lancement ;
+  le menu de langue (en haut à droite) permet d'en changer, le choix est mémorisé. Les exports (fiche PDF, CSV) suivent la langue choisie.
+
+CRÉDITS
+  Stage3D créé par PaulMX : https://paulmx.itch.io
+  Réalisé avec l'aide de l'intelligence artificielle (IA) : code et modèles 3D.
+  Moteur 3D : three.js (c) 2010-2024 les auteurs de three.js, licence MIT (https://threejs.org).
+
+LANCER
+  - Stage3D.exe : double-clic. Ouvre l'application dans une fenêtre dédiée (utilise Microsoft Edge ou Google Chrome,
+    déjà installés sur Windows). Le plan est conservé entre les lancements.
+  - Ou double-clic sur index.html (Chrome, Edge ou Firefox). Aucune installation, aucune connexion requise.
+  Fichiers de l'application : index.html, style.css, app.js (three.js est déjà inclus dans app.js).
+
+PUBLIER SUR ITCH.IO
+  1. Utiliser stage3d-itch.zip (index.html est à la racine de l'archive).
+  2. itch.io > Create new project > Kind of project : HTML > envoyer le zip > cocher « This file will be played in the browser ».
+  3. Viewport size conseillée : 1280 x 720 (ou plus grand), cocher « Fullscreen button ». Ne pas cocher « Mobile friendly » (outil de bureau).
+  4. Texte de présentation, tags et réglages prêts à copier : itch-kit/itch-page.md
+     Images : itch-kit/cover-630x500.png (couverture), cover-1260x1000.png (haute définition) et screenshot-*.png.
+  5. Dans « AI Disclosure », déclarer l'usage d'IA pour le code si c'est le cas.
+
+SE DÉPLACER EN 3D (clavier + souris)
+  Z Q S D   avancer / gauche / reculer / droite (sur un clavier QWERTY : W A S D ; ce sont les mêmes touches physiques)
+  E / A     monter / descendre (QWERTY : E / Q)
+  Maj       déplacement rapide        Alt  déplacement lent
+  Clic droit + souris   regarder autour de soi (la caméra tourne sur place, comme dans un jeu)
+  Clic gauche dans le vide + souris   tourner autour de la scène        Clic molette / Maj + glisser   décaler la vue
+  Molette   zoom vers le curseur (lissé) · Ctrl ou Alt + molette = zoom fin · + / - au clavier (Maj = pas fin)
+  Curseur de zoom dans la barre du haut : zoom précis, de 12 cm de distance (gros plan sur un micro) à 170 m ; en vue Plan,
+    l'affichage donne l'échelle (1:xx).
+  Double-clic   aller à l'endroit visé       F   cadrer la sélection ou tout (une sélection est cadrée de près)
+  Touche 0 ou Origine, bouton ⟲   RÉINITIALISER LA VUE (angle par défaut, tout le plan cadré) si l'on est perdu dans la scène
+  Flèches   déplacent la vue quand rien n'est sélectionné (sinon elles décalent l'objet)
+  Boutons en bas à droite de la vue :  👁 hauteur d'yeux (1,70 m) · 🎧 vue depuis le point d'écoute / la régie ·
+  🎤 vue depuis le bord de scène (point de vue du chanteur) · ⤢ vue d'ensemble · ⟲ réinitialiser la vue.  Le pavé Z Q S D est cliquable.
+  En vue Plan, Z Q S D déplacent la vue et E / A zooment.  La boussole indique où est le fond de scène.
+
+PRISE EN MAIN RAPIDE
+  - Bibliothèque (à gauche) : cliquer un objet puis cliquer sur le plan pour le poser. Échap ou clic droit pour arrêter.
+  - Tout est à l'échelle réelle en mètres (CL3 : 0,84 × 0,67 m, Rio3224 : 0,48 × 0,37 m, praticable 2×1, barrière Vauban 2,50...).
+  - Les objets se posent automatiquement SUR les praticables, les risers, les tables, les flight-cases, les racks et les
+    pieds d'enceinte (hauteur calculée) : console sur table sur praticable, ampli ou portable sur un case, etc.
+    Tables, cases et racks se posent eux-mêmes sur la scène. Quand on déplace un support, ce qui est posé dessus le suit.
+  - Taille de la salle et TYPE DE SOL : bouton « 📐 Salle » (largeur, profondeur, distance au mur du fond, formats prédéfinis de
+    10×12 m à 70×80 m, « Adapter à mon plan »). Le même écran propose 11 sols à l'échelle réelle : standard (neutre), parquet chêne clair,
+    parquet foncé (noyer), parquet à chevrons, plancher de scène noir, béton ciré, carrelage, moquette bleu-gris, herbe, bitume, pavés.
+    Le sol est enregistré avec le plan ; sur la fiche PDF et le PNG il est éclairci pour économiser l'encre.
+  - Bibliothèque : toutes les catégories sont repliées au démarrage (cliquer une catégorie pour l'ouvrir ; la recherche les ouvre seule).
+  - CALQUES (onglet « Calques ») : chaque objet appartient à un groupe (calque). Par défaut le groupe de son type : Scène, Sonorisation,
+    Consoles, Racks & câbles, Backline, Micros et pieds, Musiciens, Lumière, Public & mobilier, Annotations ; on peut créer ses propres
+    calques (« Nouveau calque », « Créer avec la sélection ») et déplacer des objets d'un calque à l'autre (champ « Calque » du panneau Objet,
+    ou bouton ⇥ d'un calque). Sur chaque ligne : l'œil affiche / masque tout le groupe EN UN CLIC, ◎ isole le calque (re-clic = tout
+    réafficher), 🔒 le verrouille (visible mais non sélectionnable), le nom sélectionne tout le groupe. Câbles et mesures ont aussi leur calque.
+    Un calque masqué disparaît partout (3D, plan, exports PNG / PDF, faisceaux, aimant) ; la barre d'outils affiche le nombre de calques masqués.
+    « 🚫 Sans backline » (barre d'outils) retire d'un clic les musiciens ET le backline ; un second clic les remet.
+    Par défaut, la liste de matériel et la fiche PDF ne comptent que les calques visibles (case à décocher dans l'onglet Calques).
+  - FILTRE DES FAISCEAUX par type de projecteur : bouton ▾ à côté de « Faisceaux » (ou onglet Calques) : cocher PAR LED, PC 750 W, PC LED,
+    PAR 64, découpe, lyre, barre LED ; « Tous » / « Aucun ». Un projecteur sélectionné montre toujours son faisceau.
+  - Les calques masqués / verrouillés et le filtre des faisceaux sont des préférences d'affichage (mémorisées dans le navigateur, pas dans le plan).
+  - PROJECTEURS SUR PIED OU AU SOL : en posant un projecteur (PAR, PC, PC LED, découpe, lyre), la barre « Fixation » propose Auto (accroché si un
+    truss est à portée, sinon au sol), Truss, Sur pied, Au sol. Le panneau Objet > « Fixation » permet de changer ensuite (pied télescopique,
+    hauteur totale réglable). Les faisceaux suivent la position réelle de la lampe.
+  - PATCH SON : simple liste d'entrées (N°, source, micro / DI, pied, case 48 V ; Entrée = voie suivante, glisser le numéro pour réordonner,
+    éditeur plein écran avec notes et ▲ ▼ ⧉). PATCH LUMIÈRE : onglet Patch > « Patch lumière » : univers, adresse et
+    mode DMX de chaque projecteur du plan, adressage automatique (jardin → cour, fond → face ou par type, sans jamais couper un projecteur entre deux
+    univers), jauge de chaque univers, conflits d'adresse en rouge. Les deux patchs figurent sur la fiche PDF (page Patch) et s'exportent en CSV.
+  - CHANGEMENT DE PLATEAU (bouton « ⇄ Changement », onglet Plateaux) : deux plateaux (groupes) se succèdent. Choisir le plateau actuel et le suivant,
+    sélectionner des objets puis « Reste en place » / « Part (à sortir) » / « Arrive (à rentrer) ». Ce qui reste reste en place ; ce qui part est GRISÉ
+    avec l'étiquette « À SORTIR » ; ce qui arrive est marqué en vert « À RENTRER ». Listes à sortir / à rentrer / reste, CSV, et page dédiée sur la fiche PDF.
+  - INTENSITÉ ET TAILLE DES FAISCEAUX : onglet Calques (ou Patch lumière) : curseurs « Intensité » et « Taille » pour tous les faisceaux ; intensité
+    individuelle dans le panneau Objet (Orientation) et colonne « Int. % » du patch lumière ; l'ouverture individuelle se règle aussi dans Orientation.
+  - FAISCEAUX réalistes : cône à dégradé, tache au sol avec point chaud et pénombre (nette pour une découpe, douce pour un PC), halo à la source,
+    lumières qui s'additionnent ; en clair (exports) ils restent lisibles.
+  - COMPATIBILITÉ DES PLANS : le fichier .stage3d.json porte un numéro de version (champ « v », actuellement 4). Les plans des versions
+    précédentes s'ouvrent toujours, sans rien perdre (ni les plans enregistrés par « Enregistrer », ni la sauvegarde automatique du navigateur).
+    Un plan créé par une version plus récente s'ouvre aussi, avec un avertissement, et ses données inconnues sont conservées.
+  - Retours de scène NUMÉROTÉS : sélectionner un retour (wedge, actif, coaxial, side-fill) > « N° du retour (mix) » : une pastille
+    jaune numérotée s'affiche dessus (3D, plan, PNG, fiche PDF). « Numéroter tous les retours » les numérote de 1 à n, du côté jardin
+    (gauche de l'écran) au côté cour (droite). La fiche PDF ajoute le tableau des retours numérotés.
+  - Tapis de danse : se posent sur le sol ou sur les praticables (même plus petits que le tapis) ; dimensions et couleur au choix.
+  - Style : bouton « 🌙 Dark mode » / « ☀ Aero » dans la barre du haut. Dark mode (par défaut) = interface sombre ; Aero = Y2K / Frutiger Aero, clair
+    (scène 3D comprise). Le choix est mémorisé ; les exports (fiche PDF, PNG) restent toujours clairs pour l'impression.
+  - Fenêtres redimensionnables : glisser les poignées entre la bibliothèque, la vue et le panneau de droite
+    (double-clic sur une poignée = taille d'origine). Les tailles sont mémorisées.
+  - Les noms (étiquettes) sont masqués au démarrage : bouton « Noms » pour les afficher. Ils figurent toujours sur la fiche PDF et le PNG.
+  - Bouton « Sol sombre » : sol de la scène sombre ou clair, indépendamment du style de l'interface (exports toujours clairs).
+  - Les tentes de régie, les tables et les flight-cases sont noirs par défaut (couleur modifiable dans le panneau Objet).
+  - Aimant : colle les bords des praticables entre eux. Grille : arrondit les positions (pas réglable).
+  - Vues : 1 = 3D, 2 = Plan, 3 = Face, 4 = Côté. En Plan, glisser dans le vide = sélection par cadre.
+  - Mesure (M) : distance entre deux points. Câble (C) : tracer un chemin, la longueur à prévoir (marge + rab)
+    et la longueur standard supérieure sont calculées.
+  - Calculs : placer un « Point d'écoute » et des enceintes -> distances, temps d'arrivée, retards d'alignement.
+    Tours de delay : retard = distance façade -> delay / vitesse du son + Haas.
+  - Liste : matériel et câbles comptés automatiquement (export CSV). Patch : liste d'entrées (export CSV).
+  - Fiche PDF : plan à l'échelle (1:xx), vue 3D, matériel, câbles, délais, patch. Dans la fenêtre d'impression
+    choisir « Enregistrer au format PDF », A4 paysage, échelle 100 %.
+  - Le plan est sauvegardé automatiquement dans le navigateur. « Enregistrer » crée un fichier .stage3d.json
+    (à rouvrir avec « Ouvrir » ou en le glissant dans la fenêtre).
+
+BIBLIOTHÈQUE (environ 125 objets)
+  Scène & structure : praticables 1×1 / 2×1 / 2×2 (tôle larmée, hauteurs réglables), riser, ESCALIER DE SCÈNE (avec ou sans
+    rampes, hauteur réglable), garde-corps, barrière Vauban, rideau de fond plissé, PENDRILLONS NOIRS (sur pieds ou suspendus),
+    truss 1/2/3 m, tour truss, TAPIS DE DANSE (type Marley : rouleau de 1,6 m ou zone 6×4 m ; noir, gris, blanc, bleu, rouge, vert).
+  Sonorisation : line arrays (accroché / au sol), colonne PA, enceintes ACTIVES 8" / 10" / 12" / 15", passives 12" / 15",
+    pied d'enceinte tripode, façades sur pied, subs 18" / 21", FRONT FILLS, retours (wedge, actif 12", coaxial 15"),
+    side-fills, tours de delay. Option « Enceinte amplifiée » dans le panneau Objet. Les retours peuvent être NUMÉROTÉS.
+  Consoles & régie : Yamaha CL3, Behringer X32, ChamSys QuickQ 20, stagebox Yamaha Rio3224-D2, CARTES SON (USB 2 entrées,
+    rack 8 entrées), régies complètes, tables de régie, ordinateur portable, tabourets, TENTES de régie 3×3 / 3×6 / 6×6.
+  Racks, cases & câbles : racks amplis / HF / FX, flight-cases, distribution 63A, enrouleurs, BOÎTES DE DIRECT (DI passive,
+    active, stéréo), MULTIPRISES (6 et 4 prises), passages de câbles 5 et 2 canaux.
+  Backline & musiciens : batterie (cercles, pontets, charleston avec pédale, pédale de grosse caisse), trône, amplis guitare
+    (combo, stack 4×12) et basse, GUITARES SUR PIED (électrique type Strat, type LP, basse, acoustique, pied seul),
+    PÉDALBOARD, CLAVIERS MIDI 25 et 49 touches, clavier 88 touches sur stand, PIANO À QUEUE (quart de queue 1,65 m, demi-queue 2 m, concert 2,75 m ; couvercle ouvert, petit bâton ou fermé),
+    BANQUETTE DE PIANO (pieds droits ou réglable à vis), set DJ, MICROS STATIQUES sur pied perche ou droit, OVERHEAD, PAIRE STÉRÉO sur barre
+    (AB, XY, ORTF), PIEDS DE MICRO réalistes (tripode ou
+    embase ronde, tubes télescopiques, collier, câble XLR ; micros chant / instrument / condensateur / overhead au choix),
+    PETIT PIED PERCHETTE + micro pour micro d'ampli (se pose devant l'ampli), MUSICIENS articulés (debout, chanteur avec
+    micro, guitariste, bassiste, batteur assis, claviériste ; cheveux et teint au choix).
+  Lumière & vidéo : PC 750 W, PAR 64 et découpe 1 kW (traditionnels), PC LED (Fresnel), PAR LED, lyre, barre LED, GUIRLANDE
+    lumineuse (guinguette), machine à fumée, pied T-bar + 2 PAR, PIED DE LUMIÈRE (seul, T-bar, T-bar + 2 ou 4 PAR LED), SPLITTERS DMX
+    (1→8 en rack 1U, 1→4 en boîtier), écran LED 3×2.
+  Public & mobilier, annotations (zone, texte, point d'écoute).
+
+ORIENTER LES PROJECTEURS (et autres objets)
+  - Pivotement horizontal (pan) : la rotation de l'objet (panneau Objet, ou touches R / T).
+  - Inclinaison (tilt) : panneau Objet > « Orientation (inclinaison) » : curseur de -90° à +90°, 0° = à l'horizontale,
+    90° = vers le sol. Disponible pour les projecteurs (PC, PC LED, PAR, découpes, PAR LED, lyres, barres LED, pied T-bar),
+    les enceintes (line array accroché, actives, passives), l'écran LED et la machine à fumée.
+  - « 🎯 Viser un point » : cliquer ensuite le point à éclairer (sol, scène, personne) : pivotement et inclinaison sont calculés.
+    Fonctionne avec plusieurs projecteurs sélectionnés à la fois.
+  - Bouton « Faisceaux » (touche B) : affiche le cône de lumière et la tache au sol (au-dessus du praticable si visé) ;
+    l'ouverture du faisceau est réglable. Les faisceaux des projecteurs sélectionnés sont toujours visibles.
+
+RACCOURCIS
+  V/M/C outils · 1/2/3/4 vues · R / Maj+R pivoter de 15° · T / Maj+T pivoter de 90° · Suppr supprimer
+  Ctrl+D dupliquer · Ctrl+C/V copier-coller · Ctrl+Z/Y annuler-rétablir · G grille · L noms · H couverture des enceintes
+  Ctrl+S enregistrer · Ctrl+O ouvrir · Ctrl+P fiche PDF · B faisceaux · 0 réinitialiser la vue · + / - zoom
+
+MODIFIER LE CODE (facultatif)
+  Format des plans : STATE_VERSION et MIGRATIONS dans dev/src/store.js. Test de compatibilité : dev/tests (voir dev/tests/LISEZMOI.txt).
+  Les sources sont dans dev/src : catalog.js (liste des objets), models_audio.js / models_desk.js / models_stage.js (modèles 3D),
+  textures.js (surfaces des consoles et faces de racks), floors.js (types de sol), models_piano.js (piano, banquette), gfx.js (matériaux, textures, fusion des géométries), store.js (données et calculs),
+  view.js (3D, navigation), ui.js (interface), sheet.js (fiche PDF), templates.js (modèles de scène).
+  Pour reconstruire app.js :   cd dev   puis   npm install   puis   node build.mjs
+  Nouveaux modèles : models_light.js (projecteurs, guirlande, pendrillons), models_backline.js (micros, pieds, guitares, pédalboard,
+  MIDI, carte son, DI, multiprises), models_gear.js (batterie, amplis, clavier), models_people.js (musiciens).
+  Traductions : i18n.js (moteur), lang_ui.js et lang_catalog.js (textes français -> EN / ES / DE / IT).
+  Pour ajouter un objet : écrire une fonction de dessin dans models_*.js puis ajouter une ligne def0(...) dans DEFS (catalog.js),
+  et sa traduction dans lang_catalog.js.
+  Pour refaire l'exécutable : voir dev/launcher/Launcher.cs (compilé avec csc.exe de .NET Framework, ressources index.html, style.css, app.js).
+
+LIMITES CONNUES
+  - Les modèles sont des représentations fidèles aux dimensions et à la disposition générale des appareils (sans logos de marque),
+    pas des reproductions au millimètre de chaque bouton.
+  - Les calculs de délais utilisent le centre acoustique approximatif de l'enceinte (55 % de sa hauteur) et la
+    propagation en champ libre : à confirmer par une mesure (Smaart) sur site.
+  - Aucune donnée de poids ni de charge de plancher n'est calculée : ne remplace pas une note de calcul de structure.
+  - La couverture des enceintes est un secteur horizontal indicatif (ouverture et portée réglables), pas une simulation.

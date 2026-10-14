@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stage3D — Plan de scène à l'échelle pour techniciens son</title>
+<meta name="description" content="Planifiez vos scènes et vos événements : consoles, enceintes, front fills, praticables, câbles, à l'échelle, en 2D et 3D. Délais, liste de matériel, patch et fiche technique PDF.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='1' y='1' width='30' height='30' rx='9' fill='%231aa6e0' stroke='%23fff' stroke-width='1.5'/%3E%3Cpath d='M7 13h4.2L17 8.5v15L11.2 19H7z' fill='%23fff'/%3E%3Cpath d='M20.2 12.2c1.9 2.2 1.9 5.4 0 7.6M23.4 9.2c3.5 3.8 3.5 9.8 0 13.6' fill='none' stroke='%23fff' stroke-width='1.9' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="dark">
+<div class="sky" aria-hidden="true"></div>
+<div id="app">
+  <header id="top">
+    <div class="brand"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true">
+      <defs><linearGradient id="lgBg" x1="0" y1="0" x2="0" y2="1"><stop class="s1" offset="0" stop-color="#7be4ff"/><stop class="s2" offset=".52" stop-color="#1aa6e0"/><stop class="s3" offset=".54" stop-color="#0b86c9"/><stop class="s4" offset="1" stop-color="#38c4ee"/></linearGradient></defs>
+      <rect class="lg-bg" x="1" y="1" width="30" height="30" rx="9" fill="url(#lgBg)" stroke="#fff" stroke-width="1.5"/>
+      <path class="lg-gloss" d="M4 12C4 7 7 4 12 4h8c5 0 8 3 8 8-7 3-17 3-24 0z" fill="#fff" opacity=".35"/>
+      <path class="sp" d="M7 13h4.2L17 8.5v15L11.2 19H7z" fill="#fff"/>
+      <path class="wv" d="M20.2 12.2c1.9 2.2 1.9 5.4 0 7.6" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round"/>
+      <path class="wv" d="M23.4 9.2c3.5 3.8 3.5 9.8 0 13.6" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round"/>
+    </svg><span class="bt">STAGE<b>3D</b></span><a class="by" href="https://paulmx.itch.io" target="_blank" rel="noopener" title="Stage3D, créé par PaulMX avec l'aide de l'IA : paulmx.itch.io">made by PaulMX · réalisé avec l'IA</a></div>
+    <input id="evName" class="evname" placeholder="Nom de l'événement" spellcheck="false" autocomplete="off">
+    <div class="grow"></div>
+    <button id="bUndo" class="ico" title="Annuler (Ctrl+Z)">↶</button>
+    <button id="bRedo" class="ico" title="Rétablir (Ctrl+Y)">↷</button>
+    <span class="sep"></span>
+    <button id="bTpl" title="Modèles de scène">▦ Modèles</button>
+    <button id="bOpen" title="Ouvrir un plan (Ctrl+O)">📂 Ouvrir</button>
+    <button id="bSave" title="Enregistrer le plan en fichier (Ctrl+S)">💾 Enregistrer</button>
+    <span class="sep"></span>
+    <button id="bPng" title="Exporter le plan en image">🖼 PNG</button>
+    <button id="bSheet" class="primary" title="Fiche technique imprimable / PDF (Ctrl+P)">📄 Fiche PDF</button>
+    <select id="langSel" title="Langue / Language" aria-label="Language"></select>
+    <button id="bTheme" title="Changer de style : Aero (clair) / Dark mode (sombre)">🌙 Dark mode</button>
+    <button id="bHelp" class="ico" title="Mode d'emploi">?</button>
+  </header>
+
+  <div id="body">
+    <aside id="lib" class="glass">
+      <div class="wtitle"><span>Bibliothèque</span></div>
+      <input id="libSearch" type="search" placeholder="Rechercher… (ex. CL3, front fill, flight)" autocomplete="off">
+      <div id="libList"></div>
+    </aside>
+
+    <div class="split" data-side="lib" title="Glisser pour redimensionner · double-clic : taille d'origine"></div>
+
+    <section id="stage" class="glass" data-view="3d">
+      <canvas id="gl" tabindex="0"></canvas>
+      <div id="overlay"></div>
+      <div id="marquee"></div>
+      <div id="vbar"></div>
+      <div id="tbar"></div>
+      <div id="compass" title="Orientation : le repère FOND pointe vers le fond de scène"><div class="dial"><i class="c-n">FOND</i><i class="c-s">PUBLIC</i><i class="c-e">COUR</i><i class="c-w">JARDIN</i><b class="needle"></b></div></div>
+      <div id="nav">
+        <div class="pad">
+          <button class="k kw" data-code="KeyW" title="Avancer (Z, ou W en QWERTY)">Z</button>
+          <button class="k ka" data-code="KeyA" title="Gauche (Q, ou A en QWERTY)">Q</button>
+          <button class="k ks" data-code="KeyS" title="Reculer (S)">S</button>
+          <button class="k kd" data-code="KeyD" title="Droite (D)">D</button>
+          <button class="k kq" data-code="KeyQ" title="Descendre (A, ou Q en QWERTY)">A</button>
+          <button class="k ke" data-code="KeyE" title="Monter (E)">E</button>
+        </div>
+        <div class="pre">
+          <button data-act="eye" title="Hauteur d'yeux (1,70 m)">👁</button>
+          <button data-act="listener" title="Vue depuis le point d'écoute / la régie">🎧</button>
+          <button data-act="stage" title="Vue depuis la scène vers le public">🎤</button>
+          <button data-act="frame" title="Vue d'ensemble (F)">⤢</button>
+          <button data-act="reset" title="Réinitialiser la vue (0) : angle par défaut, tout le plan cadré">⟲</button>
+        </div>
+        <div class="navhelp">Maj = rapide · clic droit + souris = regarder</div>
+      </div>
+      <div id="hint"></div>
+      <div id="scalebar"><i></i><b></b></div>
+      <div id="status"><span id="stCur"></span><span id="stSel"></span><span class="grow"></span><span class="muted">Molette : zoom vers le curseur · Double-clic : aller là</span></div>
+    </section>
+
+    <div class="split" data-side="side" title="Glisser pour redimensionner · double-clic : taille d'origine"></div>
+
+    <aside id="side" class="glass">
+      <nav id="tabs"></nav>
+      <div id="panel"></div>
+    </aside>
+  </div>
+</div>
+
+<div id="modal" hidden><div class="mbox"></div></div>
+<div id="sheet" hidden></div>
+<div id="toast"></div>
+<input type="file" id="fileIn" accept=".json,application/json" hidden>
+<script src="app.js"></script>
+</body>
+</html>

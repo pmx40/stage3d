@@ -1,0 +1,79 @@
+Stage3D is a free, in-browser tool to prepare your stages and events before you get on site. Everything is modelled to real scale, in metres, with recognisable equipment: consoles, speakers, front fills, racks, flight cases, control tent, lights, backline and musicians.
+
+Designed by a sound engineer, for sound engineers and technicians. Made by PaulMX, built with the help of AI (code and 3D models).
+
+Available in 5 languages: English, Français, Español, Deutsch, Italiano (detected automatically, can be changed at any time). A Windows .exe is also available to download.
+
+What's new
+
+- Stage changeover mode: chain two line-ups. What stays stays in place, what leaves is greyed out with a "TAKE OUT" note, what arrives is tagged "BRING IN". Take-out / bring-in lists, CSV export and a dedicated page on the PDF sheet.
+
+- Layers: every object belongs to a group (stage, sound, backline, musicians, lighting…) or to your own layers. Show or hide a whole group in one click, isolate it or lock it. A "No backline" button removes musicians and backline instantly.
+
+- Lighting patch (DMX): universe, address and mode for every light, automatic addressing (never splits a light between two universes), universe gauges, address conflicts highlighted. Plus a clean, simple audio patch (input list) with a full-screen editor. Both are on the PDF sheet.
+
+- Lights on stands or on the floor: PAR, PC, LED PC (Fresnel), profile spots and moving heads can be hung, placed on a telescopic stand or put on the floor. Pick the mounting as you place them.
+
+- Beams: far more realistic (gradient cone, soft floor spot, glow), with intensity and size sliders for all lights or for each light, a filter by light type, and per-light aiming.
+
+- New objects: grand pianos (baby grand, 2 m, concert) with piano bench, static condenser microphones on stands (boom, straight, overheads, stereo pairs AB / XY / ORTF), LED PC, light stands, DMX splitters, dance floor mats.
+
+- Floors: 11 real-scale floor types (oak, walnut and herringbone parquet, black stage floor, polished concrete, tiles, carpet, grass, asphalt, cobblestones).
+
+- Numbered stage monitors: a numbered badge on each wedge or side-fill, with automatic numbering and a table on the PDF sheet.
+
+- Rock-solid plans: plan files are versioned and every plan saved with an earlier version still opens. Rendering flicker on stage decks, amps and keyboards is fixed.
+
+Earlier updates: traditional PC 750 W, PAR 64 and 1 kW profile spots, string lights; stage stairs and black leg curtains; more realistic backline (drum kit, amps, guitars on stands, pedalboard, MIDI keyboards, mic stands, articulated musicians); audio interfaces, DI boxes, power strips; precise zoom and one-click view reset.
+
+Detailed 3D models (about 125 objects)
+
+- Consoles: Yamaha CL3 (0.84 × 0.67 m), Behringer X32, ChamSys QuickQ 20 (lighting), Rio3224-D2 stagebox, USB and rack audio interfaces.
+
+- Sound: line arrays, column PA, active 8" to 15" and passive speakers, tripod stands, mains on stands, 18" / 21" subs, front fills, monitors (wedge, active, coaxial), side-fills, delay towers.
+
+- Control: skirted tables, laptop, stools, control tents 3×3, 3×6 and 6×6.
+
+- Racks and cases: wheeled flight cases, amp / RF / FX racks, 63 A distribution, reels, DI boxes, power strips, cable ramps (5 and 2 channels).
+
+- Stage: diamond-plate stage decks, stairs, guardrails, Vauban barriers, pleated backdrop, leg curtains, truss, truss tower, dance floor mats.
+
+- Backline and musicians: drum kit, guitar and bass amps, guitars on stands, pedalboard, MIDI and 88-key keyboards, grand pianos and bench, DJ set, mic stands and microphones (dynamic and condenser), articulated musicians.
+
+- Lighting and video: PC 750 W, PAR 64, profile spot, LED PC, LED PAR, moving heads, LED bar, light stands (alone, T-bar, with 2 or 4 PARs), DMX splitters, string lights, smoke machine, LED screen.
+
+Move around like in a game
+
+- WASD to walk (ZQSD on an AZERTY keyboard), E / Q to go up / down, Shift to go fast.
+
+- Right-click + mouse to look around, mouse wheel to zoom towards the cursor (Ctrl or Alt + wheel: fine zoom), double-click to go somewhere.
+
+- Buttons: eye level, view from the control position, view from the stage, overview, reset view.
+
+What you can do
+
+- Scale 2D plan + 3D view (3D, Plan, Front, Side), grid, magnet, automatic dimensions, adjustable room size and floor type, resizable panels.
+
+- Smart placement: objects sit on stage decks, tables, flight cases, racks and speaker stands; dance mats lay over several decks.
+
+- Light aiming and beams: tilt, aim at a point, adjustable beam angle, intensity and size, filter by light type.
+
+- Layers and stage changeover to show only what you need, or to plan a quick turnaround between two bands.
+
+- Measures and cables: length needed (margin and slack included) and standard length.
+
+- Sound calculations: arrival times, alignment delays, delay tower settings (Haas effect), speaker coverage.
+
+- Equipment and cable list (CSV), audio patch and lighting patch (CSV) and PDF tech sheet (scale plan, 3D view, equipment, cables, delays, audio and lighting patch, changeover).
+
+- Ready-made templates: 5-piece band concert, conference, DJ set, 6×4 stage.
+
+- Two styles: Dark mode (default) and Aero (Y2K / Frutiger Aero), dark or light floor.
+
+Your data stays with you
+
+No account, no server: the plan is saved in your browser and can be saved as a .stage3d.json file. Files from earlier versions always open.
+
+Good to know
+
+The models respect the dimensions and general layout of the equipment (no brand logos). Delay calculations are free-field estimates, to be confirmed by an on-site measurement. DMX addresses are for planning: check them against your fixtures' manuals. Light beams and speaker coverage are visual aids. The tool does not calculate weight or structural loads. A computer with a mouse is recommended.
