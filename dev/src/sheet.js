@@ -76,7 +76,7 @@ function build(sheet) {
   const PH = Math.round(Math.min(Math.max(PW * bd / bw, PW * 0.45), PW * 1.4));
   const planCap = view.capture('plan', PW, PH, { labels: false, bounds, margin: 0.7 });
   const d3 = view.capture('3d', 1500, 1800, { labels: false, bounds, zoom: 1.2 }).canvas;
-  const WMAX = 190;
+  const WMAX = Math.min(190, 215 * PW / PH); // largeur utile, réduite si le plan est haut : il doit tenir sur la page avec l'en-tête et la légende
   const denom = planCap.scale.imageWidthM / (WMAX / 1000);
   const nice = Math.ceil(denom);
   const widthMm = Math.min(WMAX, (planCap.scale.imageWidthM / nice) * 1000);
