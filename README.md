@@ -6,8 +6,7 @@ Place consoles, speakers, racks, backline, musicians and lights to real scale, d
 👉 **[Use it now: paulmx.itch.io/stage3d](https://paulmx.itch.io/stage3d)** (runs in your browser, no account, no install)
 💾 **[Windows .exe and zip: Releases](../../releases)**
 
-*Made by **PaulMX**, a live and studio sound engineer · built with the help of AI (code and 3D models).*
-*(Version française : voir [LISEZMOI.txt](LISEZMOI.txt) et la section [Français](#français) en bas de page.)*
+*Made by **PaulMX**, a live and studio sound engineer · built with the help of AI (code and 3D models).
 
 ![Stage3D screenshot 1](screenshots/screenshot-1.png)
 
@@ -98,13 +97,6 @@ node build.mjs      # bundles dev/src into app.js at the repository root
 
 Then open `index.html` in Chrome, Edge or Firefox. Sources are in `dev/src` (three.js, plain JavaScript modules, bundled with esbuild). The plan-compatibility test is in `dev/tests` (see `dev/tests/LISEZMOI.txt`).
 
-## Good to know
-
-Delay calculations are free-field estimates, to be confirmed by an on-site measurement. DMX addresses are for planning: check them against your fixtures' manuals. Light beams and speaker coverage are visual aids. The tool does not calculate weight or structural loads.
-
-## Français
-
-Stage3D est un outil gratuit, dans le navigateur, pour préparer scènes et événements à l'échelle réelle : sonorisation, régie, backline, lumière, câbles, délais, patch son et lumière DMX, changement de plateau et fiche PDF. Disponible en français, English, Español, Deutsch et Italiano. Voir [`LISEZMOI.txt`](LISEZMOI.txt) pour les détails.
 
 ## License and credits
 
